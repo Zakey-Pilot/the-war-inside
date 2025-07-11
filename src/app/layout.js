@@ -33,7 +33,6 @@ export default function RootLayout({ children }) {
       <body
         className={`${lato.className} antialiased`}
       >
-        <Navbar title={mappedData.navBarTitle} />
         <DataProvider initialData={mappedData}>
           {children}
         </DataProvider>

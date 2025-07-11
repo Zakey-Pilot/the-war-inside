@@ -12,3 +12,10 @@ body {
   background-color: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.gradient-overlay {
+  background: 
+    linear-gradient(180deg, rgba(0, 0, 0, 0) 62.5%, rgba(0, 0, 0, 0.84) 100%),
+    linear-gradient(269.57deg, rgba(0, 0, 0, 0) 0.41%, rgba(0, 0, 0, 0.82) 99.68%),
+    linear-gradient(164.15deg, rgba(0, 0, 0, 0) 79.38%, rgba(0, 0, 0, 0.8) 90.74%);
+}

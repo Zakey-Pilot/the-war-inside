@@ -1,18 +1,8 @@
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import {DataProvider} from "@/context/DataContext";
-import {fromRecord} from "@/models/pageModel";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { DataProvider } from "@/context/DataContext";
+import { fromRecord } from "@/models/pageModel";
+import { lato } from "@/styles/fonts/lato";
 
 export const metadata = {
   title: "The War Inside",
@@ -40,13 +30,13 @@ const mappedData = fromRecord(airtableData[0]); // you can map many if needed
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-       <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        >
-        <Navbar title={mappedData.navBarTitle}/>
-      <DataProvider initialData={mappedData}>
+      <body
+        className={`${lato.className} antialiased`}
+      >
+        <Navbar title={mappedData.navBarTitle} />
+        <DataProvider initialData={mappedData}>
           {children}
-      </DataProvider>
+        </DataProvider>
       </body>
 
     </html>

@@ -9,7 +9,7 @@ export default function Hero() {
 
     return (
         <>
-            <section className={`bg-[url("/hero-bg.png")]  bg-repeat bg-cover bg-[position:73%_bottom] md:bg-bottom`}>
+            <section id="hero" className={`bg-[url("/hero-bg.png")]  bg-repeat bg-cover bg-[position:73%_bottom] md:bg-bottom`}>
                 <div className="w-full h-dvh flex flex-col  justify-center  px-4 md:px-32 gradient-overlay">
                     <InfoColumn
                         overline={"War & Peace"}

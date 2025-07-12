@@ -5,6 +5,11 @@
   --foreground: #FFFFFF;
 }
 
+html {
+  scroll-behavior: smooth;
+
+}
+
 body {
   /* background: linear-gradient(to bottom, #fefae0, #f5ebe0); */
   min-height: 100vh;
@@ -24,6 +29,6 @@ body {
   background: linear-gradient(180.02deg, #000000 0.02%, rgba(0, 0, 0, 0) 16.36%);
 }
 
-.bottom-gradient-overlay{
+.bottom-gradient-overlay {
   background: linear-gradient(180.02deg, rgba(0, 0, 0, 0.75) 0.02%, rgba(0, 0, 0, 0) 16.36%);
 }

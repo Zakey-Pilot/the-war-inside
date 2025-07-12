@@ -1,5 +1,5 @@
 import "./globals.css";
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/Navbar/Navbar";
 import { DataProvider } from "@/context/DataContext";
 import { fromRecord } from "@/models/pageModel";
 import { lato } from "@/styles/fonts/lato";
@@ -33,6 +33,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${lato.className} antialiased`}
       >
+        <Navbar />
         <DataProvider initialData={mappedData}>
           {children}
         </DataProvider>

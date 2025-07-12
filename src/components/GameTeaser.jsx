@@ -10,7 +10,7 @@ export default function GameTeaser() {
 
     return (
         <>
-            <section className={`bg-[url("/bg.png")]  bg-repeat bg-contain`}>
+            <section id="game-teaser" className={`bg-[url("/bg.png")]  bg-repeat bg-contain`}>
                 <dev className="w-full h-dvh flex flex-col  justify-center  px-4 md:px-32 py-[60px]">
                     <InfoColumn
                         overline={"Game teaser"}

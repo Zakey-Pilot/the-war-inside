@@ -5,12 +5,12 @@ import { useData } from "@/context/DataContext"
 import InfoColumn from "./InfoColumn";
 import clsx from "clsx";
 
-export default function About({ overline, title, description, withTopGradient = false, withBottomGradient = false, isLTR = true }) {
+export default function About({id, overline, title, description, withTopGradient = false, withBottomGradient = false, isLTR = true }) {
 
 
     return (
         <>
-            <section className={`bg-[url("/bg.png")]  bg-repeat bg-cover`}>
+            <section id={id} className={`bg-[url("/bg.png")]  bg-repeat bg-cover`}>
                 <div className={clsx(
                     "w-full h-dvh flex flex-col  justify-center  px-4 items-center md:px-32 ",
                     {

@@ -14,8 +14,17 @@ body {
 }
 
 .gradient-overlay {
-  background: 
+  background:
     linear-gradient(180deg, rgba(0, 0, 0, 0) 62.5%, rgba(0, 0, 0, 0.84) 100%),
     linear-gradient(269.57deg, rgba(0, 0, 0, 0) 0.41%, rgba(0, 0, 0, 0.82) 99.68%),
     linear-gradient(164.15deg, rgba(0, 0, 0, 0) 79.38%, rgba(0, 0, 0, 0.8) 90.74%);
+}
+
+.top-gradient-overlay {
+  background: linear-gradient(180.02deg, #000000 0.02%, rgba(0, 0, 0, 0) 16.36%);
+}
+
+.bottom-gradient-overlay {
+  background: linear-gradient(180.02deg, rgba(0, 0, 0, 0.75) 0.02%, rgba(0, 0, 0, 0) 16.36%);
+
 }

@@ -15,6 +15,8 @@ export default function Hero() {
                         overline={"War & Peace"}
                         title={"War Tears. Peace Heals."}
                         description={"A hand-drawn journey through ruin and redemption.\nComing soon — a story-driven game where your choices matter."}
+                        withMainTitle={true}
+                        withTitleOverlineMargin={false}
                     />
                 </div>
             </section>

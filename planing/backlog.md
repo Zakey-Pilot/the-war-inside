@@ -12,6 +12,9 @@
 **As an interested visitor**, I want to watch a teaser of the game, so I can make a good decision to try it or not.
 
 - [ ] Design a **Teaser Video** section
+
+**As an interested visitor**, I want to explore more details about the game, so I can increase my awareness and curiosity.
+
 - [ ] Design an **About the Game** section
 
 **As a motivated visitor**, I want to be notified when the game is released, so I can start playing as soon as it's available.
@@ -26,6 +29,10 @@
 ## Should Haves
 
 **As a visitor**, I want to join the game community so I can connect with people who share the same interests.
+
+- [ ] Design a **social medai row**
+- [ ] When the user taps on the social media icon navigates to (game in side) account on that social media platform
+
 
 **As a visitor**, I want to view the game's Privacy Policy so I can know how it handles my data.
 

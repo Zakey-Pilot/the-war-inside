@@ -1,29 +1,25 @@
 "use client";
 import Link from "next/link"
 import EmailForm from "./EmailForm"
-import {useData} from "@/context/DataContext"
+import { useData } from "@/context/DataContext"
+import InfoColumn from "./InfoColumn";
 
-export default function Hero(){
-
-    const { data } = useData();
-    console.log("Data is "+data)
+export default function Hero() {
 
 
-    return(
+    return (
         <>
-            <div className="w-full h-dvh flex flex-col items-center justify-center">
-                <p 
-                    className="text-center text-7xl font-bold mb-6"
-                >
-                  {
-                    data.pageTitle
-                  }  
-                </p>
-                <EmailForm />
-                <Link href="https://thewareinside-tau.vercel.app">
-                    <p className="mt-4 underline decoration-sky-500 hover:text-sky-500">Our Development Team</p>
-                </Link>
-            </div>
+            <section id="hero" className={`bg-[url("/hero-bg.png")]  bg-repeat bg-cover bg-[position:73%_bottom] md:bg-bottom`}>
+                <div className="w-full h-dvh flex flex-col  justify-center  px-4 md:px-32 gradient-overlay">
+                    <InfoColumn
+                        overline={"War & Peace"}
+                        title={"War Tears. Peace Heals."}
+                        description={"A hand-drawn journey through ruin and redemption.\nComing soon — a story-driven game where your choices matter."}
+                        withMainTitle={true}
+                        withTitleOverlineMargin={false}
+                    />
+                </div>
+            </section>
         </>
     )
 }

@@ -13,7 +13,7 @@ export default function Navbar({ title }) {
         <>
             {/* Overlay for slide-down menu */}
             {menuOpen && (
-                <div className="fixed inset-0 z-40 bg-black md:hidden" onClick={() => setMenuOpen(false)}></div>
+                <div className="fixed inset-0 z-40 bg-transparent md:hidden" onClick={() => setMenuOpen(false)}></div>
             )}
             <div className="fixed top-0 left-0 w-full bg-black/80 py-3.5 px-4 md:px-32 flex justify-between items-center z-50">
                 <Logo />

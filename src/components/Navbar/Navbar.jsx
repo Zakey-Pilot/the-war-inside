@@ -57,9 +57,6 @@ export default function Navbar({ title }) {
                         <hr className="border-t border-white/40 mx-2" />
                         <a href="#game-teaser" className="text-white text-xl py-3 px-2 flex items-center">Game teaser</a>
                     </div>
-                    <div className="mt-6">
-                        <PrimaryButton hint={"Notify Me"} />
-                    </div>
                 </div>
             </div>
         </>

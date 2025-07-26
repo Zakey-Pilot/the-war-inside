@@ -1,9 +1,9 @@
 import NavbarButton from "./NavbarItem"
 
-export default async function NavSection() {
+export default function NavSection({ mobile = false }) {
     return (
         <>
-            <div className="flex gap-[40px]">
+            <div className={mobile ? "flex flex-col gap-6" : "flex gap-[40px]"}>
                 <NavbarButton hint={"Home"} href={"#hero"}/>
                 <NavbarButton hint={"About"} href={"#about-1"}/>
                 <NavbarButton hint={"Vision"} href={""} />

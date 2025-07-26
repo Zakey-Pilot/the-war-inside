@@ -4,6 +4,6 @@ export const playfairDisplay = Playfair_Display(
     {
         weight: ["500","600"],
         style: "normal",
-        subsets: ["laten"]
+        subsets: ["latin"]
     },
 );

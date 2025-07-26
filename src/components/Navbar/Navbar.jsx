@@ -24,12 +24,14 @@ export default function Navbar() {
             <div className="flex flex-col absolute top-0 left-0 w-full">
                 {/* Top Row */}
                 <div className="py-3.5 px-4 md:px-32 flex justify-between items-center bg-black/80 z-50">
-                    <Logo />
-                    <div className="hidden md:flex items-center gap-8">
+                    <div className='md:hidden'>
+                        <Logo />
+                    </div>
+                    <div className="hidden md:flex justify-between w-full items-center gap-8">
+                        <Logo />
+
                         <NavSection />
-                        <div className="ml-8">
                             <PrimaryButton hint="Notify Me" />
-                        </div>
                     </div>
 
                     <button

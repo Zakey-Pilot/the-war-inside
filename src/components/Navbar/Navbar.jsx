@@ -13,7 +13,7 @@ export default function Navbar({ title }) {
         <>
             {/* Overlay for slide-down menu */}
             {menuOpen && (
-                <div className="fixed inset-0 z-40 bg-black/50 md:hidden" onClick={() => setMenuOpen(false)}></div>
+                <div className="fixed inset-0 z-40 bg-black md:hidden" onClick={() => setMenuOpen(false)}></div>
             )}
             <div className="fixed top-0 left-0 w-full bg-black/80 py-3.5 px-4 md:px-32 flex justify-between items-center z-50">
                 <Logo />
@@ -35,7 +35,7 @@ export default function Navbar({ title }) {
             </div>
             {/* Slide-down Mobile Menu */}
             <div
-                className={`fixed top-0 left-0 w-full max-h-[60vh] bg-black/50 z-50 transform transition-transform duration-300 md:hidden ${menuOpen ? 'translate-y-0' : '-translate-y-full'}`}
+                className={`fixed top-0 left-0 w-full max-h-[60vh] bg-black z-50 transform transition-transform duration-300 md:hidden ${menuOpen ? 'translate-y-0' : '-translate-y-full'}`}
                 style={{ boxShadow: menuOpen ? '0 2px 8px rgba(0,0,0,0.2)' : 'none' }}
             >
                 <div className="relative flex flex-col h-full p-8 gap-8">

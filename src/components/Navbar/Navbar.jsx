@@ -1,63 +1,71 @@
-'use client';
-import { useState } from "react";
-import { CiMenuFries } from "react-icons/ci";
-import { IoMdClose } from "react-icons/io";
-import NavSection from "./NavSection"
-import Logo from "../Logo"
-import PrimaryButton from "../Buttons/PrimaryButton"
+'use client'
 
-export default function Navbar({ title }) {
-    const [menuOpen, setMenuOpen] = useState(false);
+import { useState } from 'react'
+import { CiMenuFries } from 'react-icons/ci'
+import { IoMdClose } from 'react-icons/io'
+import { AnimatePresence, motion } from 'framer-motion'
+import NavSection from './NavSection'
+import Logo from '../Logo'
+import PrimaryButton from '../Buttons/PrimaryButton'
+
+export default function Navbar() {
+    const [menuOpen, setMenuOpen] = useState(false)
 
     return (
         <>
-            {/* Overlay for slide-down menu */}
+            {/* Background overlay */}
             {menuOpen && (
-                <div className="fixed inset-0 z-40 bg-black md:hidden" onClick={() => setMenuOpen(false)}></div>
+                <div
+                    className="fixed inset-0 z-40  md:hidden"
+                    onClick={() => setMenuOpen(false)}
+                />
             )}
-            <div className="fixed top-0 left-0 w-full bg-black/80 py-3.5 px-4 md:px-32 flex justify-between items-center z-50">
-                <Logo />
-                {/* Desktop Nav */}
-                <div className="hidden md:flex items-center gap-8">
-                    <NavSection />
-                    <div className="ml-8">
-                        <PrimaryButton hint={"Notify Me"} />
+
+            <div className="flex flex-col absolute top-0 left-0 w-full">
+                {/* Top Row */}
+                <div className="py-3.5 px-4 md:px-32 flex justify-between items-center bg-black/80 z-50">
+                    <div className='md:hidden'>
+                        <Logo />
                     </div>
-                </div>
-                {/* Hamburger Icon for Mobile */}
-                <button
-                    className="md:hidden flex flex-col justify-center items-center w-10 h-10 focus:outline-none"
-                    onClick={() => setMenuOpen(!menuOpen)}
-                    aria-label="Toggle menu"
-                >
-                    <CiMenuFries className="w-7 h-7 text-white" />
-                </button>
-            </div>
-            {/* Slide-down Mobile Menu */}
-            <div
-                className={`fixed top-0 left-0 w-full max-h-[60vh] bg-black z-50 transform transition-transform duration-300 md:hidden ${menuOpen ? 'translate-y-0' : '-translate-y-full'}`}
-                style={{ boxShadow: menuOpen ? '0 2px 8px rgba(0,0,0,0.2)' : 'none' }}
-            >
-                <div className="relative flex flex-col h-full p-8 gap-8">
-                    {/* Close Button */}
+                    <div className="hidden md:flex justify-between w-full items-center gap-8">
+                        <Logo />
+
+                        <NavSection />
+                            <PrimaryButton hint="Notify Me" />
+                    </div>
+
                     <button
-                        className="absolute top-4 right-4 text-white text-3xl focus:outline-none"
-                        onClick={() => setMenuOpen(false)}
-                        aria-label="Close menu"
+                        className="md:hidden absolute top-4 right-4 text-white text-3xl"
+                        onClick={() => setMenuOpen(prev => !prev)}
+                        aria-label={menuOpen ? 'Close menu' : 'Open menu'}
                     >
-                        <IoMdClose />
+                        {menuOpen ? <IoMdClose /> : <CiMenuFries />}
                     </button>
-                    {/* Mobile Nav Items with dividers */}
-                    <div className="flex flex-col gap-0 mt-2">
-                        <a href="#hero" className="text-white text-xl py-3 px-2 flex items-center">Home</a>
-                        <hr className="border-t border-white/40 mx-2" />
-                        <a href="#about-1" className="text-white text-xl py-3 px-2 flex items-center">About</a>
-                        <hr className="border-t border-white/40 mx-2" />
-                        <a href="" className="text-white text-xl py-3 px-2 flex items-center">Vision</a>
-                        <hr className="border-t border-white/40 mx-2" />
-                        <a href="#game-teaser" className="text-white text-xl py-3 px-2 flex items-center">Game teaser</a>
-                    </div>
                 </div>
+
+                {/* Mobile Nav Animated */}
+                <AnimatePresence>
+                    {menuOpen && (
+                        <motion.div
+                            className="w-full md:hidden bg-black/80 z-50"
+                            key="mobile-nav"
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: 'auto', opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.4, ease: 'easeInOut' }}
+                        >
+                            <div className="p-8 flex flex-col gap-6">
+                                <a href="#hero" className="text-white text-xl">Home</a>
+                                <hr className="border-t border-white/40" />
+                                <a href="#about-1" className="text-white text-xl">About</a>
+                                <hr className="border-t border-white/40" />
+                                <a href="#vision" className="text-white text-xl">Vision</a>
+                                <hr className="border-t border-white/40" />
+                                <a href="#game-teaser" className="text-white text-xl">Game Teaser</a>
+                            </div>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
             </div>
         </>
     )
